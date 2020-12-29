@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         height: 150
     },
     text: {
-        color: 'grey',
+        color: 'white',
         marginTop: 10,
     }
 });

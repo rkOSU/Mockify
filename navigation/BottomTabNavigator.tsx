@@ -17,7 +17,11 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint,
+                       style: {
+                         backgroundColor:"#d0605e"
+                       }
+                       }}>
       <BottomTab.Screen
         name="Home"
         component={TabOneNavigator}
@@ -73,7 +77,9 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Home', headerStyle: {backgroundColor: "#d0605e"}}}
+
+
       />
     </TabOneStack.Navigator>
   );
@@ -87,7 +93,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: 'Tab Two', headerStyle: {backgroundColor: "#d0605e"}}}
       />
     </TabTwoStack.Navigator>
   );
