@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Entypo, EvilIcons, FontAwesome5} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -19,20 +19,41 @@ export default function BottomTabNavigator() {
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon 
+                                        name="ios-home-outline" 
+                                        color={color} 
+                                        size={30} 
+                                        style={{ marginBottom: -3 }} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Search"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon 
+                                        name="search-outline" 
+                                        color={color} 
+                                        size={30} 
+                                        style={{ marginBottom: -3 }} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Library"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon 
+                                        name="ios-library-outline" 
+                                        color={color} 
+                                        size={30} 
+                                        style={{ marginBottom: -3 }} />,
         }}
       />
     </BottomTab.Navigator>
+    
   );
 }
 
