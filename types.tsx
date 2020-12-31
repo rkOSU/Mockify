@@ -21,6 +21,8 @@ export type AlbumType = {
   id: string,
   image_uri: string;
   artist_headline: string;
+  by: string;
+  name: string;
 }
 
 export type Song = {

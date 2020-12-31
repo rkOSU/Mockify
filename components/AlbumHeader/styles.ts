@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         
     },
     by: {
-        color:'grey'
+        color:'lightgrey'
     },
     button: {
         backgroundColor:'lightgreen',
