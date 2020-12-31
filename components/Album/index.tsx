@@ -1,16 +1,29 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, TouchableWithoutFeedback } from 'react-native';
 import styles from './styles';
 import { AlbumType } from '../../types';
+import { useNavigation } from '@react-navigation/native';
 
 export type AlbumProps = {
     album: AlbumType,
 }
-const Album = (props: AlbumProps) => (
+const Album = (props: AlbumProps) => {
+
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        //Hook connecting HomeScreen to AlbumScreen
+        navigation.navigate('AlbumScreen', { id: props.album.id })
+    }
+
+    return (
     <View style= { styles.container }>
-        <Image source={{ uri: props.album.image_uri }} style={ styles.image }/>
+        <TouchableWithoutFeedback onPress={onPress}>
+            <Image source={{ uri: props.album.image_uri }} style={ styles.image }/>   
+        </TouchableWithoutFeedback>
         <Text style={ styles.text }> { props.album.artist_headline } </Text>
     </View>
-)
+    )
+}
 
 export default Album;
