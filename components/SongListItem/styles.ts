@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        margin: 20
+        margin: 10
     },
     right_container: {
         justifyContent: 'space-around',
