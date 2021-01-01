@@ -7,6 +7,10 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
 import CurrentlyPlaying from './components/CurrentlyPlaying';
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
