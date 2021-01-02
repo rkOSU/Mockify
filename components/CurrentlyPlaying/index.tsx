@@ -8,6 +8,12 @@ import styles from './styles';
 import { Sound } from 'expo-av/build/Audio';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import {AppContext} from '../../AppContext';
+import { useContext } from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
+import { getSong } from '../../graphql/queries';
+
+
 const song = {
     id: "1",
     uri: 'http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3',
@@ -15,15 +21,23 @@ const song = {
     title: 'Brown Man, Black Man',
     artist: 'Matthew Boone'
 }
+
+
+
 const CurrentlyPlaying = () => {
 
+    //State for use with getSong
+    const [song, setSong] = useState(null);
+
+    //States which will be used once songs start playing (and the widget pops up)
     const [sound, setSound] = useState<Sound|null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
+    //States which will be used for the progress bar
     const [position, setPosition] = useState<number|null>(null);
     const [duration, setDuration] = useState<number| null>(null);
     
-    
+
     const onPlayBackStatusUpdate = (status) => {
         //console.log(status);
         setIsPlaying(status.isPlaying);
@@ -60,20 +74,49 @@ const CurrentlyPlaying = () => {
             await sound.playAsync();
         }
     }
-    useEffect(() => {
-        //Play song
-        playCurrentSong();
-        
-    }, [])
 
-    //For progress bar
+    
+
+    //second argument indicates what will be monitored for changes
+    useEffect(() => {
+        //if song is true, play current song
+        if (song) {
+            playCurrentSong();
+        } 
+    }, [song]);
+
+
+     //Recieve context of which song to play
+     const { songId } = useContext(AppContext);
+
+     //Using songId, get song from database
+     useEffect(() => {
+         const fetchSong = async () => {
+             try {
+                 const data = await API.graphql(graphqlOperation(getSong, {id: songId}))
+                 setSong(data.data.getSong);
+             } catch (e){
+                 console.log(e);
+             }
+         };
+         fetchSong();
+     }, [songId]);
+
+     //If no song is playing, don't render the currentlyPlaying widget
+     if (!song) {
+         return null;
+     }
+
+    //STYLING 
+    //Determine percentage value of progress in song for later use
     const getProgress = () => {
         if (sound == null || duration === null || position === null){
             return 0;
         }
-
         return (position/duration) * 100;
     }
+
+    
     return (
         <View style={styles.container}>
             <View style={[styles.progress, {width: `${getProgress()}%`}]}/>
