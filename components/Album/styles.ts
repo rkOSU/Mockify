@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         marginTop: 10,
+        marginLeft: 3,
+        
     }
 });
 

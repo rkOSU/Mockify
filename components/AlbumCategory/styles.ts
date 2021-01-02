@@ -4,14 +4,18 @@ const styles = StyleSheet.create({
     
     container: {
         margin: 10,
+
     },
     
     title: {
         color: 'white',
         fontSize: 28,
         fontWeight: 'bold',
-        margin: 10,
+        marginTop: 10,
+        marginLeft: 7,
     }
+
+
 });
 
 export default styles;

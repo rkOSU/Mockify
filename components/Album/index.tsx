@@ -12,16 +12,16 @@ const Album = (props: AlbumProps) => {
     const navigation = useNavigation();
 
     const onPress = () => {
-        //Hook connecting HomeScreen to AlbumScreen
+        //Hook connecting HomeScreen to AlbumScreen and pass album id
         navigation.navigate('AlbumScreen', { id: props.album.id })
     }
 
     return (
     <View style= { styles.container }>
         <TouchableWithoutFeedback onPress={onPress}>
-            <Image source={{ uri: props.album.image_uri }} style={ styles.image }/>   
+            <Image source={{ uri: props.album.imageUri }} style={ styles.image }/>   
         </TouchableWithoutFeedback>
-        <Text style={ styles.text }> { props.album.artist_headline } </Text>
+        <Text style={ styles.text }>{ props.album.artistsHeadline }</Text>
     </View>
     )
 }

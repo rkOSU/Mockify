@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const song = {
     id: "1",
     uri: 'http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3',
-    image_uri: 'https://i.ytimg.com/vi/pWgXIV7jZaU/maxresdefault.jpg',
+    imageUri: 'https://i.ytimg.com/vi/pWgXIV7jZaU/maxresdefault.jpg',
     title: 'Brown Man, Black Man',
     artist: 'Matthew Boone'
 }
@@ -78,7 +78,7 @@ const CurrentlyPlaying = () => {
         <View style={styles.container}>
             <View style={[styles.progress, {width: `${getProgress()}%`}]}/>
                 <View style={styles.remainder}>
-                    <Image source={{ uri: song.image_uri }} style={styles.image} />
+                    <Image source={{ uri: song.imageUri }} style={styles.image} />
                     <View style={styles.right_container}>
                         <View style={styles.name_and_artist}>
                             <Text style={styles.title}>{song.title}</Text>

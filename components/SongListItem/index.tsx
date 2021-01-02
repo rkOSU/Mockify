@@ -13,7 +13,7 @@ const SongList = (props: SongListItemProps) => {
     const { song } = props;
     return (
         <View style={styles.container}>
-            <Image source={{ uri: song.image_uri }} style={styles.image} />
+            <Image source={{ uri: song.imageUri }} style={styles.image} />
             <View style={styles.right_container}>
                 <Text style={styles.title}>{song.title}</Text>
                 <Text style={styles.artist}>{song.artist}</Text>

@@ -1,15 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-mockify-dev-20125-authRole",
-      "UnauthRoleArn": "arn:aws:iam::134643890982:role/amplify-mockify-dev-20125-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::134643890982:role/amplify-mockify-dev-20125-authRole",
+      "AuthRoleName": "amplify-mockify-dev-192515-authRole",
+      "UnauthRoleArn": "arn:aws:iam::134643890982:role/amplify-mockify-dev-192515-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::134643890982:role/amplify-mockify-dev-192515-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-mockify-dev-20125-deployment",
-      "UnauthRoleName": "amplify-mockify-dev-20125-unauthRole",
-      "StackName": "amplify-mockify-dev-20125",
-      "StackId": "arn:aws:cloudformation:us-east-1:134643890982:stack/amplify-mockify-dev-20125/fbdaf7e0-4bfe-11eb-afcd-124c09213289",
-      "AmplifyAppId": "d1n9vxai7jh68g"
+      "DeploymentBucketName": "amplify-mockify-dev-192515-deployment",
+      "UnauthRoleName": "amplify-mockify-dev-192515-unauthRole",
+      "StackName": "amplify-mockify-dev-192515",
+      "StackId": "arn:aws:cloudformation:us-east-1:134643890982:stack/amplify-mockify-dev-192515/ce666230-4c90-11eb-b24a-0a7396047ff3",
+      "AmplifyAppId": "d2budkdzbhqozq"
     }
   }
 }

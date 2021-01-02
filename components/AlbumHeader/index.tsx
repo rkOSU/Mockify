@@ -27,7 +27,7 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
 
         */
         <View style={styles.container}>
-            <Image source={{uri: album.image_uri}}style={styles.image} />
+            <Image source={{uri: album.imageUri}}style={styles.image} />
             <Text style={styles.name}>{album.name}</Text>
             <View style={styles.artist_and_likes}>
                 <Text style={styles.by}>By {album.by}</Text>
