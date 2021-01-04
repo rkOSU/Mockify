@@ -8,7 +8,6 @@
 #### Album Screen:
 <img src="IMG_5145.PNG" alt="albumscreen" width="300">
 
-
 ## Using Expo CLI:
 ### `npm install`
 ### `expo start`
