@@ -3,7 +3,7 @@
 
 
 
-## Using Expo:
+## Using Expo CLI:
 ### `npm install`
 ### `expo start`
 
