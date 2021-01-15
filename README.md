@@ -13,6 +13,7 @@ The app is has a responsive "Home" and "Album" screen, with the exception of the
 <img src="IMG_5145.PNG" alt="albumscreen" width="300">
 
 ## Using Expo CLI:
-`npm install`
-`expo start`
-
+```
+npm install
+expo start
+```
